@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Plant Quest</h1>
+            <div class="stats">
+                <span class="stat">HP: <span class="hp-bar"><span class="hp-fill"></span></span></span>
+                <span class="stat">Seeds: <span class="seed-count">42</span></span>
+            </div>
+        </header>
+
+        <main>
+            <div id="scene">
+                <div class="plant-sprite main-plant"></div>
+                <div class="dialogue-box">
+                    <p>Welcome, brave botanist! Your journey to restore the Great Tree begins here.</p>
+                </div>
+            </div>
+
+            <div id="controls">
+                <button class="game-btn">Water</button>
+                <button class="game-btn">Fertilize</button>
+                <button class="game-btn">Harvest</button>
+                <button class="game-btn danger">Prune</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Level 1 - Seedling Meadow</p>
+        </footer>
+    </div>
+</body>
+</html>

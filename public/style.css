@@ -1,0 +1,180 @@
+:root {
+    --bg-color: #2b3a1a;       /* Deep earthy green */
+    --container-bg: #8b9c6f;   /* Lighter plant green */
+    --text-primary: #1a2512;   /* Dark text */
+    --text-light: #dce7ce;     /* Light text for dark bgs */
+    --accent-color: #f4d03f;   /* Sun yellow */
+    --border-color: #1a2512;   /* Dark border for pixel art feel */
+    --btn-primary: #588157;    /* Leaf green */
+    --btn-primary-shadow: #3a5a3a;
+    --btn-danger: #e07a5f;     /* Terracotta/Rust */
+    --btn-danger-shadow: #b05a45;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    image-rendering: pixelated; /* Enhances gamey feel */
+}
+
+#game-container {
+    background-color: var(--container-bg);
+    border: 8px solid var(--border-color);
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.2),
+                8px 8px 0px rgba(0,0,0,0.5);
+    width: 800px;
+    max-width: 95vw;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--border-color);
+    color: var(--text-light);
+    padding: 15px;
+    border: 4px solid var(--border-color);
+    box-shadow: inset -2px -2px 0px rgba(0,0,0,0.5);
+}
+
+h1 {
+    font-size: 24px;
+    text-shadow: 2px 2px 0px var(--btn-primary-shadow);
+    color: var(--accent-color);
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hp-bar {
+    width: 100px;
+    height: 12px;
+    background-color: #333;
+    border: 2px solid #fff;
+    display: inline-block;
+}
+
+.hp-fill {
+    display: block;
+    width: 80%;
+    height: 100%;
+    background-color: #e63946;
+}
+
+.seed-count {
+    color: var(--accent-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#scene {
+    background-color: #a3b18a;
+    border: 6px solid var(--border-color);
+    height: 300px;
+    position: relative;
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
+    background-image: linear-gradient(0deg, #588157 20%, transparent 20%); /* Faux grass floor */
+}
+
+.plant-sprite {
+    width: 64px;
+    height: 64px;
+    background-color: var(--btn-primary);
+    border: 4px solid var(--border-color);
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Simple pixel-art like styling */
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3),
+                -16px -16px 0 -12px var(--btn-primary),
+                16px -16px 0 -12px var(--btn-primary);
+    border-radius: 4px 4px 0 0;
+}
+
+.dialogue-box {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: 4px solid var(--border-color);
+    padding: 15px;
+    font-size: 10px;
+    line-height: 1.8;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+#controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.game-btn {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--btn-primary);
+    color: white;
+    border: 4px solid var(--border-color);
+    padding: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: inset -4px -4px 0px var(--btn-primary-shadow),
+                4px 4px 0px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    transition: all 0.1s;
+}
+
+.game-btn:active {
+    box-shadow: inset 4px 4px 0px var(--btn-primary-shadow),
+                0px 0px 0px rgba(0,0,0,0.3);
+    transform: translate(4px, 4px);
+}
+
+.game-btn.danger {
+    background-color: var(--btn-danger);
+    box-shadow: inset -4px -4px 0px var(--btn-danger-shadow),
+                4px 4px 0px rgba(0,0,0,0.3);
+}
+
+.game-btn.danger:active {
+    box-shadow: inset 4px 4px 0px var(--btn-danger-shadow),
+                0px 0px 0px rgba(0,0,0,0.3);
+    transform: translate(4px, 4px);
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: var(--border-color);
+    margin-top: 10px;
+}
